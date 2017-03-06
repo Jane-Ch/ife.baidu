@@ -1,0 +1,35 @@
+.white_block{
+	background-color: white;
+	position: absolute;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+.grey_block{
+	float: left;
+	background-color: #ccc;
+	width:400px;
+	height: 200px; 
+	position: relative;
+	left:50%;
+	top: 50%;
+	margin-left: -200px;
+	margin-top: -100px;
+	
+
+}
+.yellow_block1,.yellow_block2{
+	background-color: #fc0;
+	width: 50px;
+	height: 50px;
+}
+.yellow_block1{
+	border-bottom-right-radius: 50px;
+}
+.yellow_block2{
+	border-top-left-radius: 50px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}

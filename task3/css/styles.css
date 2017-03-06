@@ -1,0 +1,48 @@
+*{
+	box-sizing: border-box;
+}
+.first,.second,.third{
+	border:2px solid #999;
+	margin:20px;
+}
+img{
+	width:80px;
+	height:80px;
+	margin: 20px;
+}
+.father{
+	border:2px solid #999;
+	margin:20px;	
+	background-color: #eee;
+	position: relative;
+	width: 100%;
+	min-height: 540px;
+}
+
+.first{
+	position: absolute;
+	left: 0;
+	padding: 0;
+	width:200px;
+	background-color: white;	
+}
+.first p{
+	position: absolute;
+	top:0;
+	right:20px;
+}
+.second{
+	padding: 20px;
+	margin:20px 160px 20px 240px;
+	background-color: white;
+}
+.third{
+	position: absolute;
+	right: 0;
+	top: 0;
+	width:120px;
+	text-align: center;
+	background-color: white;	
+}
+
+
