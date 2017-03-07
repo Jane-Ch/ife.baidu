@@ -44,13 +44,14 @@ h2{
 	color: #666666;
 }
 .floatleft{
-	margin-right:320px;
+	margin-right:420px;
 	overflow: auto;
 
 }
 .bar{
-	width: 300px;
+	width: 400px;
 	float: right;
+	font-size: .8em;
 }
 .bigimg{
 	height: 300px;
