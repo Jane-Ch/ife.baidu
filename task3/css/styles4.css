@@ -1,6 +1,9 @@
 *{
 	box-sizing: border-box;
 }
+body{
+	padding: 20px;
+}
 .first,.second,.third{
 	border:2px solid #999;
 }
@@ -11,7 +14,6 @@ img{
 }
 .father{
 	border:2px solid #999;
-	margin:20px;
 	padding: 20px;	
 	background-color: #eee;
 	width: 100%;
