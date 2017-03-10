@@ -1,0 +1,13 @@
+*{
+	box-sizing: border-box;
+	padding: 0;
+}
+body{
+	width: device-width;
+}
+.border{
+	border:2px solid #999;
+	height: 50px;
+	margin:10px -5px 10px -5px;
+	background-color: #eee;
+}
