@@ -35,11 +35,11 @@ var aqiData = [
   var k=["一","二","三","四","五","六","七","八","九","十"];
   for(i=0;i<aqiData.length;i++){
       if(aqiData[i][1]>60){
-        j++;   
+           
         var li=document.createElement("li");
         var text=document.createTextNode("第"+k[j]+"名，"+aqiData[i][0]+"，"+aqiData[i][1]);
         var ul=document.getElementById("aqi-list");
-
+        j++;
         ul.appendChild(li);
         li.appendChild(text);
       }
