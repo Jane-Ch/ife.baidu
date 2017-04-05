@@ -1,0 +1,139 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 01</title>
+  </head>
+<body>
+
+  <ul id="source">
+    <li>北京空气质量：<b>90</b></li>
+    <li>上海空气质量：<b>70</b></li>
+    <li>天津空气质量：<b>80</b></li>
+    <li>广州空气质量：<b>50</b></li>
+    <li>深圳空气质量：<b>40</b></li>
+    <li>福州空气质量：<b>32</b></li>
+    <li>成都空气质量：<b>90</b></li>
+  </ul>
+
+  <ul id="resort">
+    <!-- 
+    <li>第一名：北京空气质量：<b>90</b></li>
+    <li>第二名：北京空气质量：<b>90</b></li>
+    <li>第三名：北京空气质量：<b>90</b></li>
+     -->
+
+  </ul>
+
+  <button id="sort-btn">排序</button>
+
+<script type="text/javascript">
+
+/**
+ * getData方法
+ * 读取id为source的列表，获取其中城市名字及城市对应的空气质量
+ * 返回一个数组，格式见函数中示例
+ */
+function getData() {
+  /*
+  coding here
+  */
+  var data=Array();
+  var j=0,k=0;
+  var ul=document.getElementById("source");
+  var childs=ul.childNodes;
+  for(i=0;i<childs.length;i++){
+    if(childs[i].nodeType==1){
+      var li=childs[i].childNodes;
+      data[j]=Array();
+      data[j][0]=li[0].nodeValue.slice(0,2);//用于截取字符串中指定长度的字符串
+      data[j][1]=li[1].firstChild.nodeValue;
+      j++;
+    }
+  }
+  
+  /*
+  data = [
+    ["北京", 90],
+    ["北京", 90]
+    ……
+  ]
+  */
+
+  return data;
+
+}
+
+/**
+ * sortAqiData
+ * 按空气质量对data进行从小到大的排序
+ * 返回一个排序后的数组
+ */
+function sortAqiData(data) {
+  data=quickSort(data);//记得把返回的数组赋值给全局变量变量，否则原data不会发生变化
+  return data;
+}
+function quickSort(arr){
+            //如果数组<=1,则直接返回
+            if(arr.length<=1){return arr;}
+            var pivotIndex=Math.floor(arr.length/2);
+            
+           // 找基准，并把基准从原数组删除
+            var pivot=arr.splice(pivotIndex,1)[0];
+            //alert(pivot);
+            //定义左右数组
+            var left=[];
+            var right=[];
+
+            //比基准小的放在left，比基准大的放在right
+            for(var i=0;i<arr.length;i++){
+                if(arr[i][1]<=pivot[1]){
+                    left.push(arr[i]);
+                }
+                else{
+                    right.push(arr[i]);
+                }
+            }
+
+            //递归
+            return quickSort(left).concat([pivot],quickSort(right));
+        }
+/**
+ * render
+ * 将排好序的城市及空气质量指数，输出显示到id位resort的列表中
+ * 格式见ul中的注释的部分
+ <li>第一名：北京空气质量：<b>90</b></li>
+ */
+function render(data) {
+  var ul=document.getElementById("resort");
+  for(i=0;i<data.length;i++){
+    var li=document.createElement("li");
+    var k=["一","二","三","四","五","六","七","八","九","十"];
+    var text=document.createTextNode("第"+k[i]+"名："+data[i][0]+"空气质量：");
+    var b=document.createElement("b");
+    var val=document.createTextNode(data[i][1]);
+    ul.appendChild(li);
+    li.appendChild(text);
+    li.appendChild(b);
+    b.appendChild(val);
+  }
+}
+
+function btnHandle() {
+  var aqiData = getData();
+  aqiData = sortAqiData(aqiData);
+  render(aqiData);
+}
+
+function init() {
+
+  // 在这下面给sort-btn绑定一个点击事件，点击时触发btnHandle函数
+  var button=document.getElementById("sort-btn");
+  button.onclick=btnHandle();
+}
+
+init();
+
+</script>
+</body>
+</html>
