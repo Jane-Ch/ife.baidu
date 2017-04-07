@@ -65,7 +65,9 @@ function leftOut(){
 	leftOutButton.onclick=function(){
 		var divs=document.getElementsByTagName("div");
 		var firstDiv=divs[0];
+		alert(firstDiv.firstChild.nodeValue);
 		firstDiv.parentNode.removeChild(firstDiv);
+		
 		return false;//否则button按掉之后页面会刷新。。。
 	}
 }
@@ -74,11 +76,13 @@ function rightOut(){
 	rightOutButton.onclick=function(){
 		var divs=document.getElementsByTagName("div");
 		var lastDiv=divs[divs.length-1];
+		alert(lastDiv.firstChild.nodeValue);
 		lastDiv.parentNode.removeChild(lastDiv);
 		return false;//否则button按掉之后页面会刷新。。。
 	}
 }
-function clickOut(){		
+function clickOut(){	
+	alert(this.firstChild.nodeValue);	
 	this.parentNode.removeChild(this);
 	return false;
 		
