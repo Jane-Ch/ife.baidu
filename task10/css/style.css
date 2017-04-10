@@ -1,0 +1,41 @@
+.container{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	padding: 0;
+	margin: 0;
+
+}
+li{
+	width: 150px;
+	border:2px solid #f00;
+	margin: 20px;
+	order:1;
+	list-style-type:none;
+}
+.first{
+	height: 120px;
+}
+.second{
+	height: 100px;
+}
+.third{
+	height: 40px;
+}
+.fourth{
+	height: 200px;
+	border-color: #0f0;
+}
+@media (min-width: 641px){
+	.container{
+		align-items: center; 
+	}
+}
+@media(max-width: 640px){
+	.container{
+		align-items: flex-start; 
+	}
+	.fourth{
+		order:0;
+	}
+}
